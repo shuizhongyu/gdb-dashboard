@@ -1,13 +1,38 @@
 ## 使用方法：
 - 下载
-wget -P ~ git.io/.gdbinit
+
+  ```
+  wget -P ~ git.io/.gdbinit
+  ```
+
 - 使用
-gcc -g 1.c  
-gdb a.out  
-设置好断点后run  
-然后dashboard
-之后所有的命令就会有dashboard对应输出，很方便，更多的dashboard命令参考下问。
-也可输出到其他终端输出， dashboard-output /dev/pts/0(基于当前shell对应的)。  
+
+  ```
+  gcc -g 1.c  
+  gdb a.out 
+  ```
+
+  设置好断点后run  
+  然后dashboard
+  之后所有的命令就会有dashboard对应输出，很方便，更多的dashboard命令参考下文。
+
+- 定制化输出
+
+  也可输出到其他终端输出，
+
+  ```
+   dashboard -output /dev/pts/0(基于当前shell对应的,使用tty命令获取)。
+  ```
+
+  或者输出layout中的一部分到其他终端，如
+
+  ```
+  dashboard source -output /dev/pts/1，
+  ```
+
+  配合tmux食用更佳。
+
+  同时可以用dashboard -layout定制输出的内容，dashboard -layout查看所有输出项目，dashboard -layout +项目定制。
 
 
 
@@ -188,7 +213,7 @@ file](#configuration), for example:
     define hookpost-up
     dashboard
     end
-
+    
     define hookpost-down
     dashboard
     end
