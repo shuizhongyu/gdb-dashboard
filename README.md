@@ -1,3 +1,14 @@
+## 使用方法：
+- 下载
+wget -P ~ git.io/.gdbinit
+- 使用
+gcc -g 1.c
+gdb a.out
+设置好断点后run
+然后dashboard -output /dev/pts/0(基于当前shell对应的)
+之后所有的命令就会有dashboard对应输出，很方便
+
+
 GDB dashboard
 =============
 
